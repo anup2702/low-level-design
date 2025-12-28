@@ -1,0 +1,74 @@
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    public double add(double a, double b) {
+        return a + b;
+    }
+
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+
+
+
+
+
+
+
+public interface NotificationSender {
+    void sendNotification(String message);
+}
+
+
+public class EmailSender implements NotificationSender {
+    public void sendNotification(String message) {
+        System.out.println("Sending EMAIL: " + message);
+    }
+}
+
+public class SmsSender implements NotificationSender {
+    public void sendNotification(String message) {
+        System.out.println("Sending SMS: " + message);
+    }
+}
+
+public void notifyUser(NotificationSender sender, String message) {
+    sender.sendNotification(message);
+}
+
+
+
+
+
+public interface PaymentProcessor {
+    void processPayment(double amount);
+}
+
+public class CreditCardProcessor implements PaymentProcessor {
+    public void processPayment(double amount) {
+        System.out.println("Processing credit card payment of $" + amount);
+    }
+}
+
+public class PayPalProcessor implements PaymentProcessor {
+    public void processPayment(double amount) {
+        System.out.println("Processing PayPal payment of $" + amount);
+    }
+}
+
+public class UPIProcessor implements PaymentProcessor {
+    public void processPayment(double amount) {
+        System.out.println("Processing UPI payment of ₹" + amount);
+    }
+}
+
+
+public class PaymentService {
+    public void pay(PaymentProcessor processor, double amount) {
+        processor.processPayment(amount);
+    }
+}

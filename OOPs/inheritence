@@ -1,0 +1,25 @@
+class Car {
+    protected String make;
+    protected String model;
+
+    public void startEngine() {
+        System.out.println("Engine started");
+    }
+
+    public void stopEngine() {
+        System.out.println("Engine stopped");
+    }
+}
+
+
+class ElectricCar extends Car {
+    public void chargeBattery() {
+        System.out.println("Battery charging");
+    }
+}
+
+class GasCar extends Car {
+    public void fillTank() {
+        System.out.println("Filling gas tank");
+    }
+}

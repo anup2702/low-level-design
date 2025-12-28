@@ -1,0 +1,36 @@
+public enum OrderStatus {
+    PLACED,
+    CONFIRMED,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}
+
+
+OrderStatus status = OrderStatus.SHIPPED;
+
+if (status == OrderStatus.SHIPPED) {
+    System.out.println("Your package is on the way!");
+}
+
+
+
+public enum Coin {
+    PENNY(1),
+    NICKEL(5),
+    DIME(10),
+    QUARTER(25);
+
+    private final int value;
+
+    Coin(int value) {
+        this.value = value;
+    }
+
+    public int getValue() {
+        return value;
+    }
+}
+
+
+int total = Coin.DIME.getValue() + Coin.QUARTER.getValue(); // 35
